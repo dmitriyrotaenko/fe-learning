@@ -5,10 +5,10 @@
 .counter__btns {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	gap: 4px;
 }
 
-@media screen and (width >= 720px) {
+@media screen and (width >= 45rem) {
 	.counter__heading {
 		font-size: 2rem;
 	}

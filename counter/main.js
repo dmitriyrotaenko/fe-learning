@@ -11,8 +11,6 @@ incrementBtn.addEventListener('click', () => {
 });
 
 decrementBtn.addEventListener('click', () => {
-	if(counterValue === 0) return;
-
 	counterValue--;
 	renderValue();
 });
