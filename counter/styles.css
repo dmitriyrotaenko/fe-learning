@@ -5,7 +5,7 @@
 .counter__btns {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 0.25rem;
 }
 
 @media screen and (width >= 45rem) {
