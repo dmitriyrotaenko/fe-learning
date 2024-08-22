@@ -8,6 +8,18 @@
 	gap: 0.25rem;
 }
 
+.counter__value.counter__value-zero {
+  color: blue;
+}
+
+.counter__value.counter__value-positive {
+  color: green;
+}
+
+.counter__value.counter__value-negative {
+  color: tomato;
+}
+
 @media screen and (width >= 45rem) {
 	.counter__heading {
 		font-size: 2rem;
