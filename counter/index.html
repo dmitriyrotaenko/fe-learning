@@ -4,19 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Counter app</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+	
 	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
-	<div id="counter">
-		<h1 class="counter__heading">
-			Click count:
-			<span class="counter__value">0</span>
-		</h1>
-		<div class="counter__btns">
-			<button class="counter__increment-btn btn">+</button>
-			<button class="counter__decrement-btn btn">-</button>
-		</div>
+	<div class="app-container">
+
+		<main id="counter">
+			<h1 class="counter__heading">
+				Click count:
+				<span class="counter__value">0</span>
+			</h1>
+			<div class="counter__btns">
+				<div class="counter__btns__first-line">
+					<button class="counter__increment-btn btn">+</button>
+					<button class="counter__decrement-btn btn">-</button>
+				</div>
+	
+				<hr />
+	
+				<div class="counter__btns__second-line">
+					<button class="counter__reset btn">Reset</button>
+				</div>
+			</div>
+		</main>
+
+
+		<footer class="app-footer">
+			<span class="footer__author">Developed by D.R.</span>
+			<span class="footer__current-year">year will be set in JS</span>
+		</footer>
+
 	</div>
 
 	<script src="./main.js"></script>

@@ -19,5 +19,3 @@ function renderValue() {
 	counterElement.innerHTML = String(counterValue);
 }
 
-
-

@@ -1,11 +1,80 @@
+* { 
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.app-footer {
+  background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .counter__heading {
 	font-size: 1.25rem;
 }
 
-.counter__btns {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
+.counter__value {
+  font-weight: 900;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe7e7;
+  border: .06rem solid #fee0e0;
+  border-radius: .68rem;
+  box-sizing: border-box;
+  color: #d33a2c;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2.09rem;
+  padding: .125rem .75rem;
+  text-align: center;
+  transition: border 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.btn:focus-visible {
+  outline: none;
+}
+
+.btn:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 .06rem .18rem 0 inset;
+  color: #ffffff;
+}
+
+.counter__btns__first-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.counter__btns__second-line {
+  display: flex;
+}
+
+.counter__reset {
+  flex-basis: 100%;
 }
 
 @media screen and (width >= 45rem) {
@@ -13,17 +82,22 @@
 		font-size: 2rem;
 	}
 
-	.counter__btns {
-		flex-direction: row;
-	}
+  .counter__btns__first-line {
+    display: flex;
+    flex-direction: row;
+  }
 
 	.btn {
 		cursor: pointer;
 	}
 
+  .counter__reset {
+    flex-basis: auto;
+  }
+
 	.btn:hover {
-		background-color: lightblue;
-		color: #ffffff;
+    background-color: #ffe3e3;
+    border-color: #faa4a4;
 	}
 }
 
