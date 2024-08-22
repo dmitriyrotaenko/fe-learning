@@ -8,27 +8,12 @@ body {
   font-family: 'Roboto Slab', sans-serif;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-.app-footer {
-  background-color: tomato;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .counter__heading {
 	font-size: 1.25rem;
 }
 
-.counter__value.counter__value-zero {
+.counter__value {
   font-weight: 900;
 }
 
