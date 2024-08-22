@@ -8,17 +8,8 @@ body {
   font-family: 'Roboto Slab', sans-serif;
 }
 
-
 .counter__heading {
 	font-size: 1.25rem;
-}
-
-.counter__value {
-  font-weight: 900;
-}
-
-.counter__value.counter__value-zero {
-  color: gray;
 }
 
 .btn {
