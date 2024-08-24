@@ -1,8 +1,10 @@
-* { 
+*,
+*:after,
+*:before { 
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
-
 
 body {
   font-family: 'Roboto Slab', sans-serif;
@@ -13,21 +15,22 @@ body {
 }
 
 .btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ffe7e7;
   border: .06rem solid #fee0e0;
   border-radius: .68rem;
-  box-sizing: border-box;
   color: #d33a2c;
   font-size: 1rem;
   font-weight: 700;
-  line-height: 2.09rem;
+  line-height: 1.5;
   padding: .125rem .75rem;
   text-align: center;
   transition: border 200ms ease-in-out, box-shadow 200ms ease-in-out;
   user-select: none;
+  cursor: pointer;
   touch-action: manipulation;
   white-space: nowrap;
   word-break: break-word;
@@ -35,26 +38,46 @@ body {
 
 .btn:focus-visible {
   outline: none;
+  background-color: #f8c0c0;
 }
 
+.btn:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: -0.15rem;
+  content: "";
+  border-radius: .68rem;
+  transition: opacity 100ms ease-in;
+  background-color: transparent;
+}
+
+.btn:focus-visible:before {
+  opacity: 1;
+  box-shadow: 0 0 0 0.2rem currentColor;
+}
+
+.btn:hover {
+  background-color: #ffe3e3;
+  border-color: #faa4a4;
+}
+/* 
+  Если я пропишу :active ниже :hover стилей, то всё работает ожидаемо. 
+  Насколько ок завязывать логику стилей на их расположение в CSS файле? 
+*/
 .btn:active {
-  background-color: #D33A2C;
+  background-color: #d33a2c;
   box-shadow: rgba(0, 0, 0, 0.12) 0 .06rem .18rem 0 inset;
   color: #ffffff;
 }
 
-.counter__btns__first-line {
+.counter__btns__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-}
-
-.counter__btns__second-line {
-  display: flex;
-}
-
-.counter__reset {
-  flex-basis: 100%;
+  gap: 0.50rem;
+  padding: 0.50rem;
 }
 
 @media screen and (width >= 45rem) {
@@ -62,23 +85,9 @@ body {
 		font-size: 2rem;
 	}
 
-  .counter__btns__first-line {
-    display: flex;
+  .counter__btns__wrapper {
     flex-direction: row;
   }
-
-	.btn {
-		cursor: pointer;
-	}
-
-  .counter__reset {
-    flex-basis: auto;
-  }
-
-	.btn:hover {
-    background-color: #ffe3e3;
-    border-color: #faa4a4;
-	}
 }
 
 
