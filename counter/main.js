@@ -23,6 +23,6 @@ resetBtn.addEventListener('click', () => {
 });
 
 function renderValue() {
-	counterElement.innerHTML = String(counterValue);
+	counterElement.innerText = String(counterValue);
 }
 
