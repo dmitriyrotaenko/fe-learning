@@ -73,6 +73,10 @@ body {
   color: #ffffff;
 }
 
+.btn:focus-visible:hover {
+  background-color: #f8c0c0;
+}
+
 .counter__btns__wrapper {
   display: flex;
   flex-direction: column;
@@ -89,6 +93,5 @@ body {
     flex-direction: row;
   }
 }
-
 
 
