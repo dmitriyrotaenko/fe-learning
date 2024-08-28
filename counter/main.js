@@ -1,5 +1,7 @@
-const incrementBtn = document.querySelector('.counter__increment-btn');
-const decrementBtn = document.querySelector('.counter__decrement-btn');
+const incrementBtn = document.querySelector('.counter__increment');
+const decrementBtn = document.querySelector('.counter__decrement');
+const resetBtn = document.querySelector('.counter__reset');
+
 const counterElement = document.querySelector('.counter__value');
 
 const NEGATIVE_VALUE_CSS = 'counter__value-negative';
@@ -16,6 +18,11 @@ incrementBtn.addEventListener('click', () => {
 
 decrementBtn.addEventListener('click', () => {
 	counterValue--;
+	renderValue();
+});
+
+resetBtn.addEventListener('click', () => {
+	counterValue = 0;
 	renderValue();
 });
 
