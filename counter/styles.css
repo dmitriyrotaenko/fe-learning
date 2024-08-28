@@ -82,7 +82,7 @@ body {
 }
 
 .counter__value.counter__value-zero {
-  color: blue;
+  color: gray;
 }
 
 .counter__value.counter__value-positive {

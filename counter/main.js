@@ -36,6 +36,3 @@ function paintCounter() {
 	counterElement.classList.toggle(POSITIVE_VALUE_CSS, counterValue > 0);
 	counterElement.classList.toggle(NEGATIVE_VALUE_CSS, counterValue < 0);
 }
-
-// если каунтер боьлше 0 то зелёный, если меньше то красный
-
