@@ -81,18 +81,6 @@ body {
   padding: 0.50rem;
 }
 
-/* .counter__value.counter__value--zero {
-  color: gray;
-}
-
-.counter__value.counter__value--positive {
-  color: green;
-}
-
-.counter__value.counter__value--negative {
-  color: tomato;
-} */
-
 [data-counter-polarity="zero"] {
   color: gray;
 }
