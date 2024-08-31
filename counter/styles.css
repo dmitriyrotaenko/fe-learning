@@ -81,6 +81,18 @@ body {
   padding: 0.50rem;
 }
 
+[data-counter-polarity="zero"] {
+  color: gray;
+}
+
+[data-counter-polarity="positive"] {
+  color: green;
+}
+
+[data-counter-polarity="negative"] {
+  color: tomato;
+}
+
 @media screen and (width >= 45rem) {
 	.counter__heading {
 		font-size: 2rem;
