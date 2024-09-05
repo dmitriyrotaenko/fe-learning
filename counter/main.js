@@ -1,11 +1,13 @@
 const incrementBtn = document.querySelector('.counter__increment');
 const decrementBtn = document.querySelector('.counter__decrement');
 const resetBtn = document.querySelector('.counter__reset');
+const footerDate = document.querySelector('.footer__date');
 
 const counterElement = document.querySelector('.counter__value');
 const counterColorAttr = 'data-counter-polarity';
 const COUNTER_COOKIE = 'counter';
 
+footerDate.innerText = getYear();
 let counterValue = Number(getCookie(COUNTER_COOKIE)) || 0;
 
 renderValue();
@@ -40,4 +42,8 @@ function paintCounter() {
 	} else {
 		counterElement.setAttribute(counterColorAttr, "negative");
 	}
+}
+
+function getYear() {
+	return new Date().getFullYear();
 }

@@ -10,6 +10,13 @@ body {
   font-family: 'Roboto Slab', sans-serif;
 }
 
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .counter__heading {
 	font-size: 1.25rem;
 }
@@ -79,6 +86,14 @@ body {
   flex-direction: column;
   gap: 0.50rem;
   padding: 0.50rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffe7e7;
+  padding: 0.75rem;
 }
 
 [data-counter-polarity="zero"] {
