@@ -4,8 +4,10 @@ const resetBtn = document.querySelector('.counter__reset');
 
 const counterElement = document.querySelector('.counter__value');
 const counterColorAttr = 'data-counter-polarity';
+const COUNTER_COOKIE = 'counter';
 
-let counterValue = 0;
+let counterValue = Number(getCookie(COUNTER_COOKIE)) || 0;
+
 renderValue();
 
 incrementBtn.addEventListener('click', () => {
@@ -24,7 +26,9 @@ resetBtn.addEventListener('click', () => {
 });
 
 function renderValue() {
-	counterElement.innerText = String(counterValue);
+	const newValue = String(counterValue);
+	counterElement.innerText = newValue;
+	setCookie(COUNTER_COOKIE, newValue);
 	paintCounter();
 }
 
