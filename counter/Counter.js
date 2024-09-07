@@ -59,12 +59,14 @@ class Counter {
 		this.parent = parent || document.body;
 		this.tree = buildTree(Counter.#counterTree);
 		this.counterValue = 0;
+		this.MAX_VALUE = 4;
+		this.MIN_VALUE = -3;
 
 		this.counterElement = this.tree.querySelector('.counter__value');
 		this.incrementer = this.tree.querySelector('.counter__increment');
 		this.decrementer = this.tree.querySelector('.counter__decrement');
 		this.resetter = this.tree.querySelector('.counter__reset');
-
+		
 		this.init();
 	}
 
@@ -74,13 +76,23 @@ class Counter {
 	}
 
 	increment = () => {
-		this.counterValue++;
-		this.renderValue();
+		if(this.counterValue < this.MAX_VALUE) {
+			this.counterValue++;
+			this.renderValue();
+		} else {
+			this.incrementer.disabled = true;
+			this.resetter.disabled = true;
+			new Counter(this.parent);
+		}
 	}
 
 	decrement = () => {
-		this.counterValue--;
-		this.renderValue();
+		if(this.counterValue > this.MIN_VALUE) {
+			this.counterValue--;
+			this.renderValue();
+		} else {
+			this.destroy();
+		}
 	}
 
 	reset = () => {
@@ -92,6 +104,11 @@ class Counter {
 		const newValue = String(this.counterValue);
 		this.counterElement.innerText = newValue;
 		this.#paintValue();
+	}
+
+	destroy() {
+		this.parent.removeChild(this.tree);
+		this.#removeListeners();
 	}
 
 	#paintValue() {
@@ -108,6 +125,12 @@ class Counter {
 		this.incrementer.addEventListener('click', this.increment);
 		this.decrementer.addEventListener('click', this.decrement);
 		this.resetter.addEventListener('click', this.reset);
+	}
+
+	#removeListeners() {
+		this.incrementer.removeEventListener('click', this.increment);
+		this.decrementer.removeEventListener('click', this.decrement);
+		this.resetter.removeEventListener('click', this.reset);
 	}
 }
 
