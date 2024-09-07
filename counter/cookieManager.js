@@ -6,19 +6,17 @@ function setCookie(name, value, attrs) {
 
 	let newCookie = `${name}=${value}`;
 
-	for(let attr in attributes) {
+	for(const attr in attributes) {
 		newCookie += `; ${attr}=${attributes[attr]}`; 
 	}
 
 	document.cookie = newCookie;
 }
 
-function getCookie(name) {
+function getCookieValueByName(name) {
 	return document.cookie
 		.split(';')
 		.find(cookie => cookie.trim().startsWith(`${name}=`))
 		?.split('=')[1];
 }
-
-
 

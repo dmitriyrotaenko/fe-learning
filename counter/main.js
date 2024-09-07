@@ -7,8 +7,8 @@ const counterElement = document.querySelector('.counter__value');
 const counterColorAttr = 'data-counter-polarity';
 const COUNTER_COOKIE = 'counter';
 
-footerDate.innerText = getYear();
-let counterValue = Number(getCookie(COUNTER_COOKIE)) || 0;
+footerDate.innerText = new Date().getFullYear();
+let counterValue = Number(getCookieValueByName(COUNTER_COOKIE)) || 0;
 
 renderValue();
 
@@ -42,8 +42,4 @@ function paintCounter() {
 	} else {
 		counterElement.setAttribute(counterColorAttr, "negative");
 	}
-}
-
-function getYear() {
-	return new Date().getFullYear();
 }
