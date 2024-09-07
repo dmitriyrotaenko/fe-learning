@@ -31,7 +31,7 @@ class Counter {
 							},
 							{ 
 								type: 'button',
-								cssClasses: ['counter__increment', 'btn'],
+								cssClasses: ['counter__decrement', 'btn'],
 								children: [{ type: 'text', value: '-' }]
 							}
 						]
