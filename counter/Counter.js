@@ -58,7 +58,7 @@ class Counter {
 	constructor(parent) {
 		this.parent = parent || document.body;
 		this.tree = buildTree(Counter.#counterTree);
-		this.counterValue = 0;
+		this.counterValue = Number(getCookieValueByName('counter')) || 0;
 
 		this.counterElement = this.tree.querySelector('.counter__value');
 		this.incrementer = this.tree.querySelector('.counter__increment');
@@ -71,6 +71,7 @@ class Counter {
 	init() {
 		this.parent.appendChild(this.tree);
 		this.#applyListeners();
+		this.renderValue();
 	}
 
 	increment = () => {
@@ -91,6 +92,7 @@ class Counter {
 	renderValue() {
 		const newValue = String(this.counterValue);
 		this.counterElement.innerText = newValue;
+		setCookie('counter', newValue);
 		this.#paintValue();
 	}
 
