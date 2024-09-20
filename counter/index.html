@@ -9,36 +9,39 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="./styles.css">
+
+	<script defer src="./Counter.js"></script>
+	<script defer src="./cookieManager.js"></script>
+	<script defer src="./main.js"></script>
 </head>
 <body>
-		<div class="app-container">
-			<main class="counter">
+		<div class="app-container">	
+			<main class="counters">
 
-				<h1 class="counter__heading">
-					Click count:
-					<span data-counter-polarity="zero" class="counter__value">0</span>
-				</h1>
-	
-				<div class="counter__btns">
-					<div class="counter__actions">
-						<button class="counter__increment btn">+</button>
-						<button class="counter__decrement btn">-</button>
+				<template class="counter-template">
+					<div class="counter">
+						<h1 class="counter__heading">
+							Click count:
+							<span data-counter-polarity="zero" class="counter__value">0</span>
+						</h1>
+						<div class="counter__btns">
+							<div class="counter__actions">
+								<button class="counter__increment btn">+</button>
+								<button class="counter__decrement btn">-</button>
+							</div>
+							<hr>
+							<div class="counter__actions">
+								<button class="counter__reset btn">Reset</button>
+							</div>
+						</div>
 					</div>
-		
-					<hr />
-		
-					<div class="counter__actions">
-						<button class="counter__reset btn">Reset</button>
-					</div>
-				</div>
+				</template>
+
 			</main>
-
 			<footer class="footer">
 				<p class="footer__author">The app is developed by me 🛠️</p>
 				<p class="footer__date">&zwnj;</p>
 			</footer>
 		</div>
-	<script defer src="./cookieManager.js"></script>
-	<script defer src="./main.js"></script>
 </body>
 </html>
