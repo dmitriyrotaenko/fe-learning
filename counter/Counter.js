@@ -1,7 +1,14 @@
+let id = 1;
+
 class Counter {
 	constructor(parent) {
+		this.DEFAULT_VALUE = 0;
+		this.MAX_VALUE = 3;
+
+		this.id = id++;
+
 		this.parent = parent || document.body;
-		this.counterValue = Number(getCookieValueByName('counter')) || 0;
+		this.counterValue = Number(getCookieValueByName(`counter-${this.id}`)) || this.DEFAULT_VALUE;
 		this.tree = document.querySelector('.counter-template').content.cloneNode(true);
 
 		this.counterElement = this.tree.querySelector('.counter__value');
@@ -14,11 +21,16 @@ class Counter {
 
 	init() {
 		this.parent.appendChild(this.tree);
-		this.applyListeners();
+		this.subscribeToEvents();
 		this.renderValue();
 	}
 
 	increment = () => {
+		if(this.counterValue === this.MAX_VALUE) {
+			new Counter(this.parent);
+			return;
+		}
+
 		this.counterValue++;
 		this.renderValue();
 	}
@@ -36,7 +48,7 @@ class Counter {
 	renderValue() {
 		const newValue = String(this.counterValue);
 		this.counterElement.innerText = newValue;
-		setCookie('counter', newValue);
+		setCookie(`counter-${this.id}`, newValue);
 		this.paintValue();
 	}
 
@@ -50,7 +62,7 @@ class Counter {
 		}
 	}
 
-	applyListeners() {
+	subscribeToEvents() {
 		this.incrementer.addEventListener('click', this.increment);
 		this.decrementer.addEventListener('click', this.decrement);
 		this.resetter.addEventListener('click', this.reset);
